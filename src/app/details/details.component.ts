@@ -25,23 +25,14 @@ export class DetailsComponent implements OnInit {
     this.gameId = params['id'];
     this.httpService.getGameDetails(this.gameId).subscribe((gameResp)=>{
       this.game=gameResp;
-      console.log(this.game)
+      
+      setTimeout(() => {
+        this.gameRating = this.game.metacritic;
+      }, 1000);
     });
     
     });
   }
-
-  // getGameDetails(id: string): void {
-  //   this.httpService
-  //     .getGameDetails(id)
-  //     .subscribe((gameResp: Game) => {
-  //       this.game = gameResp;
-
-  //       setTimeout(() => {
-  //         this.gameRating = this.game.metacritic;
-  //       }, 1000);
-  //     });
-  // }
 
      
   getColor(value: number): string {
@@ -55,9 +46,5 @@ export class DetailsComponent implements OnInit {
       return '#ef4655';
     }
   }
-
- 
-  
-
 
 }
