@@ -16,7 +16,7 @@ const routes: Routes = [
     path:'details/:id',
     component: DetailsComponent,
   },
-  {path:'',redirectTo:'/',pathMatch:'full'}
+  {path:'',redirectTo:'',pathMatch:'full'}
 ];
 
 @NgModule({
